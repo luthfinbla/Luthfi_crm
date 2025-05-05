@@ -117,13 +117,13 @@ body {
 }
 
 .status-pending {
-    color: #ffcc00; /* Warna kuning untuk Menunggu Approval */
+    color: #ffcc00;
 }
 
 .status-approved {
-    color: #28a745; /* Warna hijau untuk Disetujui */
+    color: #28a745;
 }
 
 .status-rejected {
-    color: #dc3545; /* Warna merah untuk ditolak */
+    color: #dc3545; 
 }

@@ -37,9 +37,9 @@ Route::get('/customer', function () {
     return view('customer');
 })->name('customer.index');
 
-//hapus
+// Delete
 Route::delete('/leads/{lead}', [LeadController::class, 'destroy'])->name('leads.destroy');
 
-//cust
+// Customer
 Route::get('/customer', [CustomerController::class, 'index'])->name('customer.index');
 

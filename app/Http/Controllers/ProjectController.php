@@ -7,17 +7,13 @@ use App\Models\Lead;
 
 class ProjectController extends Controller
 {
-    // Menampilkan halaman form pengajuan project
     public function create($leadId)
     {
-        // Mendapatkan data lead berdasarkan ID
         $lead = Lead::findOrFail($leadId);
 
-        // Mengembalikan tampilan dengan data lead
         return view('project', compact('lead'));
     }
 
-    // Menyimpan pengajuan project
     public function store(Request $request)
     {
         $request->validate([
@@ -26,7 +22,6 @@ class ProjectController extends Controller
             'details' => 'nullable|string',
         ]);
 
-        // Menyimpan project baru
         Project::create([
             'lead_id' => $request->lead_id,
             'product' => $request->product,
