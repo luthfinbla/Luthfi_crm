@@ -1,0 +1,58 @@
+/* customer.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #080710;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: linear-gradient(90deg, #1845ad, #23a2f6);
+    padding: 20px 30px;
+    text-align: center;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.main-content {
+    padding: 30px;
+}
+
+.leads-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+}
+
+.leads-table th,
+.leads-table td {
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 14px 12px;
+    text-align: left;
+    color: #ffffff;
+}
+
+.leads-table th {
+    background-color: rgba(255,255,255,0.1);
+    font-weight: bold;
+}
+
+.leads-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background 0.3s;
+}

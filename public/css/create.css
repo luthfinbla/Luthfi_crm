@@ -1,0 +1,92 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #080710;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.header {
+    background-color: transparent;
+    padding: 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.header p {
+    font-size: 16px;
+    color: #e0e0e0;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.form {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 40px rgba(8, 7, 16, 0.5);
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.07);
+    color: white;
+    font-size: 14px;
+}
+
+input::placeholder {
+    color: #ccc;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #23a2f6;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+button.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #fff;
+    background: linear-gradient(135deg, #1845ad, #23a2f6);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button.btn:hover {
+    background: linear-gradient(135deg, #0f337a, #1c7ecf);
+}
