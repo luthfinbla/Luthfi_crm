@@ -1,61 +1,116 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Web CRM - PT. Smart (Divisi Sales)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi Customer Relationship Management (CRM) berbasis web ini dikembangkan khusus untuk mendukung kegiatan divisi sales di PT. Smart. Sebelumnya, proses pencatatan data calon pelanggan, layanan yang ditawarkan, serta data pelanggan aktif masih dilakukan secara manual, yang rentan terhadap kesalahan, duplikasi, dan kesulitan dalam pelacakan informasi.
 
-## About Laravel
+## Tujuan Proyek
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Divisi sales PT. Smart sebelumnya masih mencatat data secara manual untuk:
+- Calon customer (leads)
+- Produk atau layanan internet
+- Pelanggan aktif
+- Penjualan
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fitur Utama
 
-## Learning Laravel
+### 1. Halaman Login
+- Autentikasi pengguna (sales/manager)
+- Hanya pengguna yang berhasil login yang bisa mengakses sistem
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 2. Halaman Leads (Calon Customer)
+- Menampilkan daftar calon customer
+- Menambahkan data calon customer
+- Edit/Hapus calon customer (opsional)
+- Pengajuan calon customer menjadi proyek
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 3. Halaman Master Produk (Layanan Internet)
+- Menampilkan daftar layanan/produk yang tersedia
+- Produk dipilih saat pengajuan calon customer ke project
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 4. Halaman Project (Proses Pengajuan)
+- Menampilkan form pengajuan calon customer menjadi project
+- Memilih layanan dari master produk
+- Mengisi detail layanan
+- Status awal: **Menunggu Approval Manager**
+- Jika detail memuat kata *"fix"*, otomatis dianggap **disetujui**
+- Data customer yang disetujui akan masuk ke halaman Customer
 
-## Laravel Sponsors
+### 5. Halaman Customer Aktif
+- Menampilkan daftar customer tetap (yang sudah disetujui)
+- Menampilkan layanan yang digunakan oleh masing-masing customer
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## Alur Sistem
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+Berikut adalah flow diagram alur aplikasi:
 
-## Contributing
+![Flow Diagram CRM]![luthfi_crm drawio](https://github.com/user-attachments/assets/4d8b7bb7-f670-489e-9b4e-4f9ffb274f31)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+### Penjelasan Flow:
+1. Pengguna login ke sistem.
+2. Sales melihat dan mengelola daftar calon customer.
+3. Sales dapat menambahkan, mengedit, atau menghapus calon customer.
+4. Jika ingin diproses ke project, sales memilih layanan dari master produk dan mengisi detail pengajuan.
+5. Project menunggu approval manager. Jika detail berisi "fix", status otomatis menjadi *disetujui*.
+6. Jika disetujui, customer masuk ke halaman pelanggan tetap. Jika tidak, tetap di halaman project dengan status "menunggu" atau "ditolak".
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+## Teknologi yang Digunakan
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Laravel** – Framework PHP untuk backend dan routing
+- **Blade** – Template engine Laravel
+- **PostgreSQL / MySQL** – Database untuk menyimpan data leads, produk, dan customer
+- **HTML/CSS** – Tampilan antarmuka pengguna
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Struktur Halaman
+
+- `/login` – Halaman login
+- `/leads` – Daftar calon customer
+- `/produk` – Master produk (layanan)
+- `/project` – Form pengajuan calon customer
+- `/customer` – Daftar customer tetap
+
+---
+
+##  Batasan Proyek Saat Ini
+
+Beberapa fitur dalam aplikasi CRM ini masih dalam tahap pengembangan dan memiliki keterbatasan sebagai berikut:
+
+-  **Integrasi Database Terbatas**  
+  Saat ini, sistem hanya menghubungkan database untuk **data customer (leads)** dan **pengajuan project**. Halaman **Master Produk** masih bersifat statis dan belum terhubung langsung ke database maupun sistem pengajuan.
+
+-  **Status Pengajuan Belum Otomatis Terproses**  
+  Meskipun terdapat field `status` untuk menandai apakah pengajuan project telah disetujui atau belum, sistem **approval otomatis atau manual belum diimplementasikan**. Saat ini, semua project tetap berstatus "Menunggu Approval Manager".
+
+-  **Customer Tetap Masih Kosong**  
+  Karena status pengajuan belum pernah disetujui, halaman daftar **Customer Tetap** saat ini masih kosong. Proses pemindahan dari leads ke customer aktif akan tersedia setelah fitur approval selesai dibuat.
+
+-  **Interaksi Master Produk dan Project Belum Tersinkronisasi**  
+  Produk layanan yang dipilih dalam proses pengajuan project belum menggunakan data dari halaman **Master Produk** secara dinamis. Ini masih menggunakan dropdown statis.
+
+>  Fitur-fitur di atas direncanakan akan dikembangkan pada tahap selanjutnya untuk menyempurnakan alur CRM secara penuh.
+
+---
+
+## Cara Menjalankan
+
+```bash
+# 1. Clone repo
+git clone https://github.com/luthfinbla/laravel-xampp.git
+
+# 2. Install dependency
+composer install
+
+# 3. Setup env & database
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+
+# 4. Jalankan server lokal
+php artisan serve
